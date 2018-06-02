@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>게시판 리스트 </title>
+
+<style>
+
+* {
+  margin:0; padding:0;
+}
+
+body {
+  font-size:16px;
+  font-family:"맑은 고딕";
+}
+
+ a {
+    color:#000;
+   text-decoration:none;
+   cursor:pointer;
+  }
+
+  a:hover {
+    color:yellowgreen;
+    text-decoration:underline;
+  }
+
+#board {
+  width:800px;
+  margin:30px auto 10px;
+}
+
+  #title {
+    height:45px;
+   font-weight:bold;
+   font-size:16px;
+    clear:both;
+  }
+
+.list dl dt {
+  float:left;
+}
+
+.list dl dd {
+  float:left;
+}
+
+ .list .num {width:70px;} 
+.list .sub {width:500px;} 
+.list .data {width:85px;} 
+.list .count {width:60px;} 
+
+
+.list dt {
+  width:200px;
+  text-align:center;
+  background-color:#7BA7AB;
+  border-bottom:2px solid black;
+  padding:10px 5px;
+  }
+
+.list dd {
+  width:200px;
+  text-align:center;
+  padding:8px 5px;
+  border-bottom:1px solid #ccc;
+}
+
+  .list dd.sub {
+  text-align:left; padding-left:5px; width:500px;
+}
+
+#board .list-bot {
+   clear: both;
+   text-align:center;
+   padding:30px; 
+   font-size:18px;
+}
+button{
+clear:both;
+margin-left:650px;
+width:100px;
+height:31px;
+text-align:center;
+line-height:31px;
+background-color:#7BA7AB;
+color:#FFFFFF;
+font-size:12px;
+font-weight:bold;
+font-family:"맑은 고딕";
+
+}
+
+                
+</style>
+
+</head>
+<body>
+
+<div id="board">
+
+<div id="title">
+    <h3>두산베어스 > 관람후기 </h3>
+</div>
+
+<div class="list"> 
+  <dl>
+   <dt class="num">번호</dt>
+   <dt class="sub">제목</dt>
+   <dt class="data">작성일</dt>
+   <dt class="count">조회수</dt>
+  </dl>
+
+  <dl>
+   <dd class="num">1</dd>
+   <dd class="sub"><a href"#">동해물과백두산이 마르고 닳도록...(3)  </a></dd>
+   <dd class="data">2010-10-10</dd>
+   <dd class="count">1</dd>
+  </dl>
+  
+  <dl>
+   <dd class="num">2</dd>
+   <dd class="sub"><a href"#">하느님이 보우하사 우리나라만세 </a></dd>
+   <dd class="data">2010-10-10</dd>
+   <dd class="count">1</dd>
+  </dl>
+
+  <dl>
+   <dd class="num">3</dd>
+   <dd class="sub"><a href"#">무궁화 삼천리화려강산 대한사람대한으로 길이보전하세.</a></dd>
+   <dd class="data">2010-10-10</dd>
+   <dd class="count">1</dd>
+  </dl>
+  
+    <dl>
+   <dd class="num">4</dd>
+   <dd class="sub"><a href"#"> 두산베어스 최강두산 !!양의지 가즈와!!</a></dd>
+   <dd class="data">2010-10-10</dd>
+   <dd class="count">1</dd>
+  </dl>
+  
+    <dl>
+   <dd class="num">5</dd>
+   <dd class="sub"><a href"#">남산위에저소나무 철갑을 두른듯....</a></dd>
+   <dd class="data">2010-10-10</dd>
+   <dd class="count">1</dd>
+  </dl>
+  
+    <dl>
+   <dd class="num">6</dd>
+   <dd class="sub"><a href"#">바람서리 불면함은 일편단심일세 </a></dd>
+   <dd class="data">2010-10-10</dd>
+   <dd class="count">1</dd>
+  </dl>
+  
+    <dl>
+   <dd class="num">7</dd>
+   <dd class="sub"><a href"#">무궁화삼천리화려강산 대한사람대한으로길이 보전하세. </a></dd>
+   <dd class="data">2010-10-10</dd>
+   <dd class="count">1</dd>
+  </dl>
+  
+    <dl>
+   <dd class="num">8</dd>
+   <dd class="sub"><a href"#">가을하늘공활한대 높고구름없이~~~~~</a></dd>
+   <dd class="data">2010-10-10</dd>
+   <dd class="count">1</dd>
+  </dl>
+  
+    <dl>
+   <dd class="num">9</dd>
+   <dd class="sub"><a href"#">밝은달은 우리가슴 일편단심일세 ㅋㅋㅋ</a></dd>
+   <dd class="data">2010-10-10</dd>
+   <dd class="count">1</dd>
+  </dl>
+  
+    <dl>
+   <dd class="num">10</dd>
+   <dd class="sub"><a href"#">무궁화삼천리 화려강산 !!대한사람대한으로길이 보전하세. </a></dd>
+   <dd class="data">2010-10-10</dd>
+   <dd class="count">1</dd>
+  </dl>
+</div>
+<button type="submit" >작성 </button>
+
+<div class="list-bot">
+	<a href="#">처음 </a>
+ 	<a href="#"> < </a>
+  	<a href="#">1</a>
+ 	<a href="#">2</a>
+ 	<a href="#">3</a>
+ 	<a href="#">4</a>
+ 	<a href="#">5</a>
+ 	<a href="#">6</a>
+ 	<a href="#">7</a>
+ 	<a href="#">8</a>
+ 	<a href="#">9</a>
+ 	<a href="#">10</a>
+ 	<a href="#"> > </a>
+ 	<a href="#">마지막 </a>
+
+</div>
+
+</body>
+</html>
+
+

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+.myform{
+	margin:10px;
+	width:600px;
+	padding:10px;
+	height:300px;
+}
+body {
+  font-size:16px;
+  font-family:"맑은 고딕";
+}
+  #title {
+    height:45px;
+   font-weight:bold;
+   font-size:16px;
+    clear:both;
+  }
+#stylized{
+	border:solid 1px black;
+	width:500px;
+	height:500px;
+}
+#stylized input{
+font-size:12px;
+border:solid 1px black;
+}
+#re{
+border:solid 1px black;
+	width:500px;
+	height:300px;
+}
+.reform{
+	margin:10px;
+	width:600px;
+	padding:10px;
+	height:300px;
+}
+
+</style>
+</head>
+<body>
+<div id="stylized" class="myform">
+<form id="form" name="form" method="post">
+    <h3>두산베어스 > 관람후기 </h3>
+	<table border="0">
+		<tr>
+		
+				제목 : <input type="text" name="title" />
+				<br/>
+		</tr>
+		<tr>
+				내용 : </br> <textarea cols = "75" rows = "20"></textarea>
+				<br/>
+		</tr>
+		<tr>
+			<td>
+				이름 : <input type="text" name="name" size="20" >	
+				<br/>
+			</td>
+			<td>
+				비밀번호 : <input type="password" name="pwd" placeholder="숫자4글자이상 ">
+				<br/>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+			 	<textarea cols ="70" rows="5" placeholder="내용 입력"></textarea>
+			</td>
+		</tr>
+		<tr>
+			<td align="right" colspan="2">
+				<button type="submit" size="20">등록 </button> 
+			</td>
+		</tr>
+	</table>	
+</form>
+</div>
+</body>
+</html>

@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="./css/comment.css">
 <style>
 .myform{
 	margin:10px;
@@ -23,39 +24,51 @@ body {
 #stylized{
 	border:solid 1px black;
 	width:500px;
-	height:500px;
+	height:800px;
 }
 #stylized input{
 font-size:12px;
 border:solid 1px black;
 }
-#re{
-border:solid 1px black;
-	width:500px;
-	height:300px;
+#stylized button{
+clear:both;
+margin-left:350px;
+margin-top:20px;
+width:120px;
+height:30px;
+text-align:center;
+line-height:31px;
+background-color:#000;
+color:#FFFFFF;
+font-size:11px;
+font-weight:bold;
+font-family:"맑은 고딕";
 }
-.reform{
-	margin:10px;
-	width:600px;
-	padding:10px;
-	height:300px;
+h3{
+	padding-top:10px;
+	padding-left:275px;
 }
 
 </style>
 </head>
+
 <body>
+ <h3>두산베어스 > 관람후기 </h3>
+<center>
 <div id="stylized" class="myform">
 <form id="form" name="form" method="post">
-    <h3>두산베어스 > 관람후기 </h3>
 	<table border="0">
 		<tr>
-		
+			<td align="left" colspan="2">
 				제목 : <input type="text" name="title" />
 				<br/>
+			</td>
 		</tr>
 		<tr>
-				내용 : </br> <textarea cols = "75" rows = "20"></textarea>
+			<td align="leff" colspan="2">
+				내용 : </br> <textarea cols = "77" rows = "50"></textarea>
 				<br/>
+			</td>
 		</tr>
 		<tr>
 			<td>
@@ -68,17 +81,17 @@ border:solid 1px black;
 			</td>
 		</tr>
 		<tr>
-			<td colspan="2">
-			 	<textarea cols ="70" rows="5" placeholder="내용 입력"></textarea>
+			<td>
 			</td>
 		</tr>
 		<tr>
 			<td align="right" colspan="2">
-				<button type="submit" size="20">등록 </button> 
+				<button type="submit" align="right">등록</button> 
 			</td>
 		</tr>
 	</table>	
 </form>
 </div>
 </body>
+</center>
 </html>

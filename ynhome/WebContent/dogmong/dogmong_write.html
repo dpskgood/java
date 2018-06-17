@@ -23,12 +23,12 @@ legend{display:none}
 .tbl_type2 .input_txt td input,.tbl_type2 .input_txt td textarea{vertical-align:middle}
 .tbl_type2 .input_txt input.name{width:100px;padding:2px 0 1px;border:solid 1px #d2d2d2}
 .tbl_type2 .input_txt textarea.comment{width:80%;height:14px;padding:2px 0 1px;border:solid 1px #d2d2d2}
-.tbl_type2 .input_txt input.submit{width:60px;border:solid 1px #666;background-color:#f2f2f2;font-family:'돋움';font-size:12px;line-height:normal}
+/* .tbl_type2 .input_txt input.submit{width:60px;border:solid 1px #666;background-color:#f2f2f2;font-family:'돋움';font-size:12px;line-height:normal} */ */
 /* //UI Object */
 </style>
 </head>
 <body>
-<h1>두산베어스 > 이벤트 </h1>
+<h1>개몽이 > 용품  </h1>
 <div id="code_origin" class="code_tmpl">
 <!-- UI Object -->
 <table cellspacing="0" border="1" summary="글 내용을 표시" class="tbl_type">
@@ -42,6 +42,10 @@ legend{display:none}
 <th scope="row">제목</th>
 <td colspan="5"><input type="text" size="50"></td>
 </tr>
+<tr>
+<th scope="row">파일 </th>
+<td colspan="5"><input type="file" size="50"></td>
+</tr>
 </thead>
 <tbody>
 <tr>
@@ -52,12 +56,6 @@ legend{display:none}
 <th scope="row">조회</th>
 <td>15</td>
 </tr>
-<tr>
-<th scope="row">내용</th>
-<td colspan="5" class="cont"><textarea cols ="210" rows="50"></textarea>
-	
-</td>
-</tr>
 </tbody>
 </table>
 
@@ -66,7 +64,7 @@ legend{display:none}
 <table width="100%">
 	<tr>
 		<td align="right">
- <button type="submit"> 등록 </button> 
+<input type="submit" title="입력" value="등록" class="submit">
  		</td>
  	</tr>
 </table>

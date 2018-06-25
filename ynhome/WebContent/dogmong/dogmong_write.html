@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Script-Type" content="text/javascript">
 <meta http-equiv="Content-Style-Type" content="text/css">
 <title>Table Type</title>
-
+<script src="/ynhome/js/ckeditor/ckeditor.js"></script>
 <style type="text/css">
 /* UI Object */
 legend{display:none}
@@ -28,7 +28,7 @@ legend{display:none}
 </style>
 </head>
 <body>
-<h1>개몽이 > 용품  </h1>
+<h1>개몽이 > 사진 </h1>
 <div id="code_origin" class="code_tmpl">
 <!-- UI Object -->
 <table cellspacing="0" border="1" summary="글 내용을 표시" class="tbl_type">
@@ -44,19 +44,13 @@ legend{display:none}
 </tr>
 <tr>
 <th scope="row">파일 </th>
-<td colspan="5"><input type="file" size="50"></td>
+<td><input type="file" size="50"></td>
+<th scope="row">파일 </th>
+<td><input type="file" size="50"></td>
 </tr>
+
+
 </thead>
-<tbody>
-<tr>
-<th scope="row">작성자</th>
-<td><input type="text" ></td>
-<th scope="row">비밀번호 </th>
-<td>	<input type="password" name="pwd" placeholder="숫자4글자이상 "></td>
-<th scope="row">조회</th>
-<td>15</td>
-</tr>
-</tbody>
 </table>
 
 <!-- //UI Object -->

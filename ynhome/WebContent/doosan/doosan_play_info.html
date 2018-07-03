@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<title>Table Type</title>
+<style type="text/css">
+/* UI Object */
+legend{display:none}
+.tbl_type,.tbl_type th,.tbl_type td{border:0}
+.tbl_type{width:100%;border-top:1px solid #999;border-bottom:1px solid #999;color:#666;font-size:12px;table-layout:fixed}
+.tbl_type caption{display:none}
+.tbl_type th{padding:5px 0 4px;border-bottom:solid 1px #d2d2d2;background-color:#f1f1f4;color:#333;font-weight:bold;line-height:18px;vertical-align:top}
+.tbl_type td{padding:8px 0 5px 10px;border-bottom:solid 1px #d2d2d2;text-align:left;resize: auto;}
+.tbl_type td.cont{padding:20px;line-height:1.4em}
+.tbl_type2{width:100%;margin-top:15px;border-top:1px solid #999;border-bottom:1px solid #999;color:#666;font-size:12px;table-layout:fixed}
+.tbl_type2,.tbl_type2 th,.tbl_type2 td{border:0}
+.tbl_type2 caption{display:none}
+.tbl_type2 td{padding:5px 0 3px 10px;line-height:1.4em;text-align:left}
+.tbl_type2 .input_txt td{padding:5px 0 5px 10px;border-bottom:solid 1px #d2d2d2}
+.tbl_type2 .input_txt td input,.tbl_type2 .input_txt td textarea{vertical-align:middle}
+.tbl_type2 .input_txt input.name{width:100px;padding:2px 0 1px;border:solid 1px #d2d2d2}
+.tbl_type2 .input_txt textarea.comment{width:80%;height:14px;padding:2px 0 1px;border:solid 1px #d2d2d2}
+/* .tbl_type2 .input_txt input.submit{width:60px;border:solid 1px #666;background-color:#f2f2f2;font-family:'돋움';font-size:12px;line-height:normal} */ */
+/* //UI Object */
+</style>
+</head>
+<body>
+<h1>개몽이 > 사진 </h1>
+<div id="code_origin" class="code_tmpl">
+<!-- UI Object -->
+<table cellspacing="0" border="1" summary="글 내용을 표시" class="tbl_type">
+<caption>글 읽기</caption>
+<colgroup>
+<col width="50"><col width="150">
+<col width="50"><col width="150">
+</colgroup>
+<thead>
+<tr>
+<th scope="row">제목</th>
+<td colspan="3"><input type="text" size="180%"></td>
+</tr>
+<tr>
+<th scope="row">파일 </th>
+<td><input type="file" size="50"></td>
+<th scope="row">파일 </th>
+<td><input type="file" size="50"></td>
+</tr>
+<tr>
+<th scope="row">파일 </th>
+<td><input type="file" size="50"></td>
+<th scope="row">파일 </th>
+<td><input type="file" size="50"></td>
+</tr>
+
+</thead>
+</table>
+
+<!-- //UI Object -->
+</div>
+<table width="100%">
+	<tr>
+		<td align="right">
+<input type="submit" title="입력" value="등록" class="submit">
+ 		</td>
+ 	</tr>
+</table>
+
+</body>
+</html>

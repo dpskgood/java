@@ -39,7 +39,7 @@
 /* UI Object */
 /* Common */
 /* body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button,select{margin:0;padding:0} */
-body,input,textarea,select,button,table{font-family:'돋움',Dotum,AppleGothic,sans-serif;font-size:12px}
+body,input,textarea,select,table{font-family:'돋움',Dotum,AppleGothic,sans-serif;font-size:12px}
 img,fieldset{border:0}
 ul,ol{list-style:none}
 em,address{font-style:normal}
@@ -52,6 +52,14 @@ a:hover,a:active,a:focus{text-decoration:underline}
 .srch select,.srch input{margin:-1px 0 1px;font-size:12px;color:#373737;vertical-align:middle}
 .srch .keyword{margin-left:1px;padding:2px 3px 5px;border:1px solid #b5b5b5;font-size:12px;line-height:15px}
 /* //UI Object */
+/* 등록버튼  */
+.btn_both{overflow:hidden;clear:both;width:100%}
+.btn_both .fr{float:right}
+
+a.btn_big{display:inline-block;padding-right:4px;background:url(http://static.naver.com/groupware/2010/bg_btn_default.gif) no-repeat 100% 0;font-family:'돋움',dotum;font-size:12px;color:#444;line-height:26px;word-spacing:-1px;text-decoration:none !important;white-space:nowrap}
+a.btn_big span,a.btn_big strong{display:block;padding:1px 8px 0 12px;background:url(http://static.naver.com/groupware/2010/bg_btn_default.gif) no-repeat}
+a.btn_sml{display:inline-block;padding-right:4px;background:url(http://static.naver.com/groupware/2010/bg_btn_default.gif) no-repeat 100% -27px;font-family:'돋움',dotum;font-size:11px;color:#444;line-height:21px;letter-spacing:-1px;word-spacing:-1px;text-decoration:none !important;white-space:nowrap}
+a.btn_sml span,a.btn_sml strong{display:block;padding:1px 4px 0 8px;background:url(http://static.naver.com/groupware/2010/bg_btn_default.gif) no-repeat 0 -27px}
 </style>
 </head>
 <body>
@@ -133,7 +141,12 @@ a:hover,a:active,a:focus{text-decoration:underline}
 </table>
 <!-- //UI Object -->
 </div>
- 
+ <!-- //UI Object -->
+ <div class="btn_both">
+ 	<div class="fr">
+ 		<a href="../doosan/doosan_write_1.html" class="btn_big"><strong>등록</strong></a>
+ 	</div>
+ </div>
  <!-- UI Object -->
 <div class="paginate">
 	<a href="#" class="pre">이전</a>

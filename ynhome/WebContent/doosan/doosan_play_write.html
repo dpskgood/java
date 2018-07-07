@@ -5,87 +5,108 @@
 <meta http-equiv="Content-Script-Type" content="text/javascript">
 <meta http-equiv="Content-Style-Type" content="text/css">
 <title>Table Type</title>
+
 <style type="text/css">
 /* UI Object */
-legend{display:none}
+legend{display:none} --수정 
 .tbl_type,.tbl_type th,.tbl_type td{border:0}
 .tbl_type{width:100%;border-top:1px solid #999;border-bottom:1px solid #999;color:#666;font-size:12px;table-layout:fixed}
 .tbl_type caption{display:none}
-.tbl_type th{padding:10px 0 4px;border-bottom:solid 1px #d2d2d2;color:#333;font-weight:bold;line-height:18px;vertical-align:top}
-.tbl_type td{border-bottom:solid 1px #d2d2d2; width:100%; padding:7px; align:center;}
-.tbl_type td.cont{padding:20px;line-height:1.4em}
-.tbl_type2{width:100%;margin-top:15px;border-top:1px solid #999;border-bottom:1px solid #999;color:#666;font-size:12px;table-layout:fixed}
-.tbl_type2,.tbl_type2 th,.tbl_type2 td{border:0}
-.tbl_type2 caption{display:none}
-.tbl_type2 td{padding:5px 0 3px 10px;line-height:1.4em;text-align:left}
-.tbl_type2 .input_txt td{padding:5px 0 5px 10px;border-bottom:solid 1px #d2d2d2}
-.tbl_type2 .input_txt td input,.tbl_type2 .input_txt td textarea{vertical-align:middle}
-.tbl_type2 .input_txt input.name{width:100px;padding:2px 0 1px;border:solid 1px #d2d2d2}
-.tbl_type2 .input_txt textarea.comment{width:80%;height:14px;padding:2px 0 1px;border:solid 1px #d2d2d2}
-body,input,textarea,select,button,table{font-family:'돋움',Dotum,AppleGothic,sans-serif;font-size:12px}
-img {
-	heignt:300px;
-	width:400px;
+.tbl_type th{padding:5px 0 4px;border-bottom:solid 1px #d2d2d2;background-color:#f1f1f4;color:#333;font-weight:bold;line-height:18px;vertical-align:top}
+.tbl_type td{padding:8px 0 5px 10px;border-bottom:solid 1px #d2d2d2;text-align:left}
+.tbl_type td.cont{padding:20px;line-height:1.4em;font-family:'돋움';font-size:15px;}
 
+/* .tbl_type .input_txt td{padding:5px 0 5px 10px;border-bottom:solid 1px #d2d2d2} */
+/* .tbl_type .input_txt td input,.tbl_type .input_txt td textarea{vertical-align:middle} */
+/* .tbl_type .input_txt input.name{width:100px;padding:2px 0 1px;border:solid 1px #d2d2d2} */
+/* .tbl_type .input_txt textarea.comment{width:80%;height:14px;padding:2px 0 1px;border:solid 1px #d2d2d2} */
+/* .tbl_type .input_txt input.submit{width:60px;border:solid 1px #666;background-color:#f2f2f2;font-family:'돋움';font-size:12px;line-height:normal} */
+img{
+ 	width:50px; height:30px;
 }
-/* .tbl_type2 .input_txt input.submit{width:60px;border:solid 1px #666;background-color:#f2f2f2;font-family:'돋움';font-size:12px;line-height:normal} */ */
 /* //UI Object */
 body,input,textarea,select,button,table{font-family:'돋움',Dotum,AppleGothic,sans-serif;font-size:12px}
 </style>
 </head>
-<body>
+<body> 
 <h1>두산베어스 > 경기일정&후기  </h1>
 <div id="code_origin" class="code_tmpl">
 <!-- UI Object -->
 <table cellspacing="0" border="1" summary="글 내용을 표시" class="tbl_type">
-<caption>글 읽기</caption>
-<thead>
-<tr>
-<td align="center">2018년 6월 30일 </td>
-</tr>
-<tr>
-<td align="center">
-<select>
-	<option>선택없음</option>
-	<option>우천취소</option>
-	<option>강우콜드</option>
-	<option>기타취소</option>
-	</select> 
-</td>
-</tr>
-<tr>
-<td align="center">
-	두산 VS 기아 
-</td>
-</tr>
-<tr>
-<td align="center">
-	<font color="red">12</font> : 2 
-</td>
-</tr>
-<tr>
-<td align="center">
-잠실 경기장
-</td>
-</tr>
-<tr>
-<td align="center">
+	<caption>글 읽기</caption>
+	<tr>
+		<th scope="row">일자</th>
+		<td><input type="text"><img src="../image/doosan/calendar.jpeg"> </td>
+		<th scope="row">경기장</th>
+		<td >
+			<select>
+				<option value="">경기장</option>
+			    <option value="잠실구장 ">잠실구장 </option>
+			    <option value="마산야구장 ">마산야구장</option>
+			    <option value="고척스카이돔 ">고척스카이돔 </option>
+			    <option value="수원kt위즈파크 ">수원kt위즈파크</option>
+			    <option value="광주기아챔피언스필드">광주기아챔피언스필드</option>
+			    <option value="사직야구장">사직야구장</option>
+			    <option value="인천sk행복드림구장">인천sk행복드림구장</option>
+			    <option value="한화생명이글스파크">한화생명이글스파크</option>
+			    <option value="대구삼성라이온즈파크">대구삼성라이온즈파크</option>
+			</select>
+		</td>
+		
+	</tr>
+	<tr>
+		<th scope="row">홈</th>
+		<td>
+			<select>
+			<option value="">홈</option>
+			    <option value="두산">두산 </option>
+			    <option value="기아 ">기아 </option>
+			    <option value="SK">SK</option>
+			    <option value="KT">KT</option>
+			    <option value="LG">LG</option>
+			    <option value="넥센">넥센 </option>
+			    <option value="삼성 ">삼성 </option>
+			    <option value="한화 ">한화</option>
+			    <option value="롯데 ">롯데 </option>
+			    <option value="NC">NC</option>
+			</select>
+		</td>
+		<th scope="row">원정</th>
+		<td>
+			<select>
+				<option value="">원정</option>
+			    <option value="두산">두산 </option>
+			    <option value="기아 ">기아 </option>
+			    <option value="SK">SK</option>
+			    <option value="KT">KT</option>
+			    <option value="LG">LG</option>
+			    <option value="넥센">넥센 </option>
+			    <option value="삼성 ">삼성 </option>
+			    <option value="한화 ">한화</option>
+			    <option value="롯데 ">롯데 </option>
+			    <option value="NC">NC</option>
+			</select>
+		</td>
+	</tr>
+	<tr>
+			<th scope="row">홈점수</th>
+			<td><input type="text"></td>
+			<th scope="row">어웨이점수</th>
+			<td><input type="text"></td>
+	</tr>
+	<tr>
+		<th scope="row">내용</th>
+		<td ><textarea cols = "125" rows = "20"></textarea></td>
+	</tr>
 
-
-</td>
-</tr>
-</thead>
 </table>
-
-<!-- //UI Object -->
-</div>
 <table width="100%">
 	<tr>
 		<td align="right">
-<input type="submit" title="입력" value="등록" class="submit">
+ 			<button type="submit"> 등록 </button> 
  		</td>
  	</tr>
 </table>
-
+</div>
 </body>
 </html>

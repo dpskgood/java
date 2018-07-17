@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+
+function abspos(){  // 클릭 이벤트가 발생한 바로 그 위치
+       this.x = event.screenX - window.screenLeft - document.body.clientLeft + document.body.scrollLeft  - event.offsetX;
+       this.y = event.screenY - window.screenTop - document.body.clientTop + document.body.scrollTop  - event.offsetY;
+       return this;
+       this.x = event.screenX - window.screenLeft - document.body.leftMargin + document.body.scrollLeft  - event.offsetX;
+       this.y = event.screenY - window.screenTop - document.body.topMargin + document.body.scrollTop  - event.offsetY;
+       return this;
+   }
+
+function itemClick() {
+    var d = document.getElementById('lay');
+    d.style.display='block';
+    
+    var elm = event.srcElement.parentElement;
+    var pos = abspos();
+    var i = parseInt(elm.parentElement.offsetHeight,10);
+    var j = parseInt(elm.offsetHeight,10);
+    pos.y += 10;
+    d.style.left = pos.x  + 10;
+    d.style.top = pos.y + 10;
+}
+</script>
+
+<div id="lay" style="position:<X>absolute; display:none;">
+내용이 어쩌고 저쩌고
+</div>
+<input type="button" onclick="itemClick();" value="클릭">
+
+</body>
+</html>

@@ -1,0 +1,397 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<title>Table Type</title>
+
+<style type="text/css">
+/* UI Object */
+legend{display:none} --수정 
+.tbl_type,.tbl_type th,.tbl_type td{border:0}
+.tbl_type{width:100%;border-top:1px solid #999;border-bottom:1px solid #999;color:#666;font-size:12px;table-layout:fixed}
+.tbl_type caption{display:none}
+.tbl_type th{padding:5px 0 4px;border-bottom:solid 1px #d2d2d2;background-color:#f1f1f4;color:#333;font-weight:bold;line-height:18px;}
+.tbl_type td{padding:8px 0 5px 10px;border-bottom:solid 1px #d2d2d2;text-align:left}
+.tbl_type td.cont{padding:20px;line-height:1.4em;font-family:'돋움';font-size:15px;}
+
+/* .tbl_type .input_txt td{padding:5px 0 5px 10px;border-bottom:solid 1px #d2d2d2} */
+/* .tbl_type .input_txt td input,.tbl_type .input_txt td textarea{vertical-align:middle} */
+/* .tbl_type .input_txt input.name{width:100px;padding:2px 0 1px;border:solid 1px #d2d2d2} */
+/* .tbl_type .input_txt textarea.comment{width:80%;height:14px;padding:2px 0 1px;border:solid 1px #d2d2d2} */
+/* .tbl_type .input_txt input.submit{width:60px;border:solid 1px #666;background-color:#f2f2f2;font-family:'돋움';font-size:12px;line-height:normal} */
+img{
+ 	width:50px; height:50px;
+}
+/* //UI Object */
+body,input,textarea,select,button,table{font-family:'돋움',Dotum,AppleGothic,sans-serif;font-size:12px};
+/* //UI Object */
+
+#calendar {
+  width: 30%;
+}
+#calendar a {
+  color: #8e352e;
+  text-decoration: none;
+}
+#calendar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+#calendar li {
+  display: block;
+  float: left;
+  width: 14.342%;
+  padding: 5px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  margin-right: -1px;
+  margin-bottom: -1px;
+}
+#calendar ul.weekdays {
+  height: 40px;
+  background: #8e352e;
+}
+#calendar ul.weekdays li {
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 20px;
+  border: none !important;
+  padding: 10px 6px;
+  color: #fff;
+  font-size: 11px;
+}
+#calendar .days li {
+
+  height: 40px;
+}
+#calendar .days li:hover {
+  background: #d3d3d3;
+}
+#calendar .date {
+  text-align: center;
+  margin-bottom: 5px;
+  padding: 8px;
+  width: 28px;
+  border-radius: 30%;
+  float: right;
+}
+#calendar .other-month {
+  background: #f5f5f5;
+  color: #666;
+}
+/* ============================
+                Mobile Responsiveness
+   ============================*/
+@media (max-width: 768px) {
+  #calendar .weekdays, #calendar .other-month {
+    display: none;
+  }
+  #calendar li {
+    height: auto !important;
+    border: 1px solid #ededed;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: -1px;
+  }
+  #calendar .date {
+    float: none;
+  }
+}
+.cal caption .prev {
+  float: left;
+}
+.cal caption .next {
+  float: right;
+}
+</style>
+</head>
+<body> 
+<h1>두산베어스 > 경기일정&후기  </h1>
+<div id="code_origin" class="code_tmpl">
+<!-- UI Object -->
+<table cellspacing="0" border="1" summary="글 내용을 표시" class="tbl_type">
+	<caption>글 읽기</caption>
+	<tr>
+		<th scope="row" width="10%">일자</th>
+		<td><input type="text">
+		<img src="../image/doosan/calendar.jpeg" onclick="itemClick();" align="middle">
+
+
+		<div id="lay" style="position:<X>absolute; display:none;">
+		<div id="calendar-wrap">
+            	<h1>
+            		<center>
+                  <span class="prev"><a href="#">←</a></span>
+                   2018 07월 
+       			  <span class="next"><a href="#">→</a></span>
+       			 </center>
+       		</h1>
+            <div id="calendar">
+                <ul class="weekdays">
+                    <li><font color="red">일</font></li>
+                    <li>월</li>
+                    <li>화</li>
+                    <li>수</li>
+                    <li>목</li>
+                    <li>금</li>
+                    <li>토</li>
+                </ul>
+                <!-- Days from previous month -->
+                <ul class="days">
+                    <li class="day other-month">
+                        <div class="date">27</div>                      
+                    </li>
+                    <li class="day other-month">
+                        <div class="date">28</div>                   
+                    </li>
+                    <li class="day other-month">
+                        <div class="date">29</div>                      
+                    </li>
+                    <li class="day other-month">
+                        <div class="date">30</div>                      
+                    </li>
+                    <li class="day other-month">
+                        <div class="date">31</div>                      
+                    </li>
+                    <!-- Days in current month -->
+                    <li class="day">
+                        <div class="date">1</div>                       
+                    </li>
+                    <li class="day">
+                        <div class="date">2</div>     
+                    </li>
+                </ul>
+                    <!-- Row #2 -->
+                <ul class="days">
+                    <li class="day">
+                        <div class="date"><font color="red">3</font></div>                       
+                    </li>
+                    <li class="day">
+                        <div class="date">4</div>                       
+                    </li>
+                    <li class="day">
+                        <div class="date">5</div>                       
+                    </li>
+                    <li class="day">
+                        <div class="date">6</div>                       
+                    </li>
+                    <li class="day">
+                        <div class="date">7</div>                   
+                    </li>
+                    <li class="day">
+                        <div class="date">8</div>                       
+                    </li>
+                    <li class="day">
+                        <div class="date">9</div>                       
+                    </li>
+                </ul>
+                    <!-- Row #3 -->
+                <ul class="days">
+                    <li class="day">
+                        <div class="date"><font color="red">10</font></div>                      
+                    </li>
+                    <li class="day">
+                        <div class="date">11</div>                      
+                    </li>
+                    <li class="day">
+                        <div class="date">12</div>                      
+                    </li>
+                    <li class="day">
+                        <div class="date">13</div>                      
+                    </li>
+                    <li class="day">
+                        <div class="date">14</div>
+                    </li>
+                    <li class="day">
+                        <div class="date">15</div>                      
+                    </li>
+                    <li class="day">
+                        <div class="date">16</div>                      
+                    </li>
+                </ul>
+                    <!-- Row #4 -->
+                <ul class="days">
+                    <li class="day">
+                        <div class="date"><font color="red">17</font></div>                      
+                    </li>
+                    <li class="day">
+                        <div class="date">18</div>                      
+                    </li>
+                    <li class="day">
+                        <div class="date">19</div>                      
+                    </li>
+                    <li class="day">
+                        <div class="date">20</div>                      
+                    </li>
+                    <li class="day">
+                        <div class="date">21</div>                      
+                    </li>
+                    <li class="day">
+                        <div class="date">22</div>      
+                    </li>
+                    <li class="day">
+                        <div class="date">23</div>                      
+                    </li>
+                </ul>
+                        <!-- Row #5 -->
+                <ul class="days">
+                    <li class="day">
+                        <div class="date"><font color="red">24</font></div>                      
+                    </li>
+                    <li class="day">
+                        <div class="date">25</div>
+                               
+                    </li>
+                    <li class="day">
+                        <div class="date">26</div>                      
+                    </li>
+                    <li class="day">
+                        <div class="date">27</div>                      
+                    </li>
+                    <li class="day">
+                        <div class="date">28</div>                      
+                    </li>
+                    <li class="day">
+                        <div class="date">29</div>                      
+                    </li>
+                    <li class="day">
+                        <div class="date">30</div>                      
+                    </li>
+                </ul>
+                <!-- Row #6 -->
+                <ul class="days">
+                    <li class="day">
+                        <div class="date"><font color="red">31</font></div>                      
+                    </li>
+                    <li class="day other-month">
+                        <div class="date">1</div> <!-- Next Month -->                       
+                    </li>
+                    <li class="day other-month">
+                        <div class="date">2</div>                       
+                    </li>
+                    <li class="day other-month">
+                        <div class="date">3</div>                       
+                    </li>
+                    <li class="day other-month">
+                        <div class="date">4</div>                       
+                    </li>
+                    <li class="day other-month">
+                        <div class="date">5</div>                       
+                    </li>
+                    <li class="day other-month">
+                        <div class="date">6</div>                       
+                    </li>
+                </ul>
+            </div><!-- /. calendar -->
+            <table border="0" width="100%">
+            		<tr>
+            			<td align="right" width="100%" > 
+            				<input type=button value="창닫기" onclick="self.close()">
+            			</td>
+            		</tr>
+            </table>
+        </div><!-- /. wrap -->
+       </div>
+		
+<script type="text/javascript">
+
+function abspos(){  // 클릭 이벤트가 발생한 바로 그 위치
+       this.x = event.screenX - window.screenLeft - document.body.clientLeft + document.body.scrollLeft  - event.offsetX;
+       this.y = event.screenY - window.screenTop - document.body.clientTop + document.body.scrollTop  - event.offsetY;
+       return this;
+       this.x = event.screenX - window.screenLeft - document.body.leftMargin + document.body.scrollLeft  - event.offsetX;
+       this.y = event.screenY - window.screenTop - document.body.topMargin + document.body.scrollTop  - event.offsetY;
+       return this;
+   }
+
+function itemClick() {
+    var d = document.getElementById('lay');
+    d.style.display='block';
+    
+    var elm = event.srcElement.parentElement;
+    var pos = abspos();
+    var i = parseInt(elm.parentElement.offsetHeight,10);
+    var j = parseInt(elm.offsetHeight,10);
+    pos.y += 10;
+    d.style.left = pos.x  + 10;
+    d.style.top = pos.y + 10;
+}
+</script>
+		</td>
+		<th scope="row" width="10%">경기장</th>
+		<td >
+			<select>
+				<option value="">경기장</option>
+			    <option value="잠실구장 ">잠실구장 </option>
+			    <option value="마산야구장 ">마산야구장</option>
+			    <option value="고척스카이돔 ">고척스카이돔 </option>
+			    <option value="수원kt위즈파크 ">수원kt위즈파크</option>
+			    <option value="광주기아챔피언스필드">광주기아챔피언스필드</option>
+			    <option value="사직야구장">사직야구장</option>
+			    <option value="인천sk행복드림구장">인천sk행복드림구장</option>
+			    <option value="한화생명이글스파크">한화생명이글스파크</option>
+			    <option value="대구삼성라이온즈파크">대구삼성라이온즈파크</option>
+			</select>
+		</td>
+		
+	</tr>
+	<tr>
+		<th scope="row">홈</th>
+		<td>
+			<select>
+			<option value="">홈</option>
+			    <option value="두산">두산 </option>
+			    <option value="기아 ">기아 </option>
+			    <option value="SK">SK</option>
+			    <option value="KT">KT</option>
+			    <option value="LG">LG</option>
+			    <option value="넥센">넥센 </option>
+			    <option value="삼성 ">삼성 </option>
+			    <option value="한화 ">한화</option>
+			    <option value="롯데 ">롯데 </option>
+			    <option value="NC">NC</option>
+			</select>
+		</td>
+		<th scope="row">원정</th>
+		<td>
+			<select>
+				<option value="">원정</option>
+			    <option value="두산">두산 </option>
+			    <option value="기아 ">기아 </option>
+			    <option value="SK">SK</option>
+			    <option value="KT">KT</option>
+			    <option value="LG">LG</option>
+			    <option value="넥센">넥센 </option>
+			    <option value="삼성 ">삼성 </option>
+			    <option value="한화 ">한화</option>
+			    <option value="롯데 ">롯데 </option>
+			    <option value="NC">NC</option>
+			</select>
+		</td>
+	</tr>
+	<tr>
+			<th scope="row">홈점수</th>
+			<td><input type="text"></td>
+			<th scope="row">어웨이점수</th>
+			<td><input type="text"></td>
+	</tr>
+	<tr>
+		<th scope="row">내용</th>
+		<td ><textarea cols = "170" rows = "20"></textarea></td>
+	</tr>
+
+</table>
+<table width="100%">
+	<tr>
+		<td align="right">
+ 			<button type="submit"> 등록 </button> 
+ 		</td>
+ 	</tr>
+</table>
+</div>
+</body>
+</html>
